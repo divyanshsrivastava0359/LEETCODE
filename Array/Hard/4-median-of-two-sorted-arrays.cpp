@@ -2,7 +2,7 @@
 // Problem: 4. Median of Two Sorted Arrays
 // Difficulty: Hard
 // Topics: Array, Binary Search, Divide and Conquer
-// Runtime: 8 ms (Beats 5.8%)
+// Runtime: 4 ms (Beats 18.9%)
 // Memory: 95.9 MB (Beats 25.5%)
 // Submitted: Sep 2, 2026
 // Link: https://leetcode.com/problems/median-of-two-sorted-arrays/
