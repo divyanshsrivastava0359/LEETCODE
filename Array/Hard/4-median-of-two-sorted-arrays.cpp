@@ -2,8 +2,8 @@
 // Problem: 4. Median of Two Sorted Arrays
 // Difficulty: Hard
 // Topics: Array, Binary Search, Divide and Conquer
-// Runtime: 0 ms (Beats 100.0%)
-// Memory: 96 MB (Beats 9.5%)
+// Runtime: 12 ms (Beats 5.8%)
+// Memory: 96.1 MB (Beats 9.5%)
 // Submitted: Sep 2, 2026
 // Link: https://leetcode.com/problems/median-of-two-sorted-arrays/
 // ═══════════════════════════════════════════════════════
@@ -29,7 +29,7 @@ public:
             return result[n/2];
         }
         else{
-            return (result[(n / 2) - 1] + result[n / 2]) / 2.0;
+            return (result[(n / 2) - 1] + result[n / 2]) / 2.0;// because in c++ n/2+1give next index thats why we use n/2-1 because it starts form 0 ;
         }
     }
 };
