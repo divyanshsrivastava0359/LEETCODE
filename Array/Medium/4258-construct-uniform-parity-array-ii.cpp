@@ -2,15 +2,12 @@
 // Problem: 4258. Construct Uniform Parity Array II
 // Difficulty: Medium
 // Topics: Array, Math
-// Runtime: 0 ms (Beats 100.0%)
+// Runtime: 3 ms (Beats 72.5%)
 // Memory: 165.8 MB (Beats 62.8%)
 // Submitted: Sep 3, 2026
 // Link: https://leetcode.com/problems/construct-uniform-parity-array-ii/
 // ═══════════════════════════════════════════════════════
 
-#include <vector>
-#include <algorithm>
-#include <climits>
 
 class Solution {
 public:
