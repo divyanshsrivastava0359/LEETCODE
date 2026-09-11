@@ -2,8 +2,8 @@
 // Problem: 326. Power of Three
 // Difficulty: Easy
 // Topics: Math, Recursion
-// Runtime: 2 ms (Beats 65.8%)
-// Memory: 8.8 MB (Beats 74.7%)
+// Runtime: 0 ms (Beats 100.0%)
+// Memory: 8.9 MB (Beats 42.8%)
 // Submitted: Sep 11, 2026
 // Link: https://leetcode.com/problems/power-of-three/
 // ═══════════════════════════════════════════════════════
@@ -15,6 +15,7 @@ public:
         while(n%3==0){
                 n=n/3;
             }
-        return n==1;
+       if (n==1) return true;
+       return false;
     } 
 };
