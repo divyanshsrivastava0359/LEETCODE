@@ -2,8 +2,8 @@
 // Problem: 94. Binary Tree Inorder Traversal
 // Difficulty: Easy
 // Topics: Stack, Tree, Depth-First Search, Binary Tree
-// Runtime: 2 ms (Beats 4.7%)
-// Memory: 10.9 MB (Beats 34.8%)
+// Runtime: N/A (Beats 0.0%)
+// Memory: N/A (Beats 0.0%)
 // Submitted: Sep 18, 2026
 // Link: https://leetcode.com/problems/binary-tree-inorder-traversal/
 // ═══════════════════════════════════════════════════════
