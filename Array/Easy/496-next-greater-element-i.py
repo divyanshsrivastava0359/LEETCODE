@@ -3,7 +3,7 @@
 # Difficulty: Easy
 # Topics: Array, Hash Table, Stack, Monotonic Stack
 # Runtime: 39 ms (Beats 17.6%)
-# Memory: 12.6 MB (Beats 26.3%)
+# Memory: 12.5 MB (Beats 92.8%)
 # Submitted: Sep 29, 2026
 # Link: https://leetcode.com/problems/next-greater-element-i/
 # ═══════════════════════════════════════════════════════
@@ -15,20 +15,23 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[int]
         """
-        list1=[]
+        list1 = []
+        
         for num in nums1:
-            star=nums2.index(num)
-            found=False
-            for i in range(star+1,len(nums2)):
-                if(nums2[i]>num):
-                    list1.append(nums2[i])
-                    found=True
-                    break
-
+            # 1. Find where the current number sits in nums2
+            start_index = nums2.index(num)
+            
+            # 2. Look at all elements strictly to the right of it
+            found = False
+            for j in range(start_index + 1, len(nums2)):
+                if nums2[j] > num:
+                    list1.append(nums2[j])
+                    found = True
+                    break  # Stop at the very first greater element
+            
+            # 3. If no greater element was found to the right, append -1
             if not found:
                 list1.append(-1)
+                
         return list1
-
-
-            
 
