@@ -2,34 +2,12 @@
 // Problem: 315. Count of Smaller Numbers After Self
 // Difficulty: Hard
 // Topics: Array, Binary Search, Divide and Conquer, Binary Indexed Tree, Segment Tree, Merge Sort, Ordered Set, Treap
-// Runtime: 339 ms (Beats 58.7%)
-// Memory: 199.7 MB (Beats 54.5%)
+// Runtime: 351 ms (Beats 55.7%)
+// Memory: 199.8 MB (Beats 54.2%)
 // Submitted: Oct 13, 2026
 // Link: https://leetcode.com/problems/count-of-smaller-numbers-after-self/
 // ═══════════════════════════════════════════════════════
 
-// class Solution {
-// public:
-//     vector<int> countSmaller(vector<int>& nums) {
-//         vector<int>list;
-//         int j=0;
-//         if(nums.size()==1){
-//             list.push_back(0);
-//             return list;
-//         }
-//         for(int i=0;i<nums.size();i++){
-//             int count=0;
-//             for(int k=i+1;k<nums.size();k++){
-//                 if(nums[i]>nums[k]){
-//                     count++;
-//                 }
-//             }
-//             list.push_back(count);
-//             j++;
-//         }
-//         return list;
-//     }
-// };
 #include <vector>
 #include <numeric>
 
@@ -42,8 +20,7 @@ public:
         int i = left;      // Pointer for left subarray
         int j = mid + 1;   // Pointer for right subarray
         int k = 0;
-        int right_less_count = 0; // Tracks elements from right array smaller than left element
-
+        int right_less_count = 0; 
         while (i <= mid && j <= right) {
             // If right element is strictly smaller than left element
             if (nums[indices[j]] < nums[indices[i]]) {
