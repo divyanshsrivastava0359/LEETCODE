@@ -2,8 +2,8 @@
 // Problem: 155. Min Stack
 // Difficulty: Medium
 // Topics: Stack, Design
-// Runtime: 61 ms (Beats 48.1%)
-// Memory: 150.9 MB (Beats 93.6%)
+// Runtime: 66 ms (Beats 33.2%)
+// Memory: 151.1 MB (Beats 67.6%)
 // Submitted: Oct 13, 2026
 // Link: https://leetcode.com/problems/min-stack/
 // ═══════════════════════════════════════════════════════
