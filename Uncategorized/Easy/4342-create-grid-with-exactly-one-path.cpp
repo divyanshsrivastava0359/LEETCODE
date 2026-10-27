@@ -2,7 +2,7 @@
 // Problem: 4342. Create Grid With Exactly One Path
 // Difficulty: Easy
 // Topics: —
-// Runtime: 1 ms (Beats 57.2%)
+// Runtime: 4 ms (Beats 18.7%)
 // Memory: 12.1 MB (Beats 15.7%)
 // Submitted: Oct 27, 2026
 // Link: https://leetcode.com/problems/create-grid-with-exactly-one-path/
@@ -16,7 +16,7 @@ public:
         for(int i=0;i<m;i++){
             string r="";
             for(int j=0;j<n;j++){
-                if(i==0 || j==n-1){
+                if(i==m-1|| j==0){
                     r.append(".");
                 }
                 else{
