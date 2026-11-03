@@ -37,7 +37,10 @@ public:
         }
         parent.resize(n);
 
-        iota(parent.begin(),parent.end(),0);
+        // iota(parent.begin(),parent.end(),0); it doing same a sfor loop below
+        for (int i = 0; i < parent.size(); i++) {
+    parent[i] = i;
+}
         int su_merge=0;
 
         for(const auto& conn:connections){
