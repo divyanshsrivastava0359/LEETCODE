@@ -2,8 +2,8 @@
 // Problem: 315. Count of Smaller Numbers After Self
 // Difficulty: Hard
 // Topics: Array, Binary Search, Divide and Conquer, Binary Indexed Tree, Segment Tree, Merge Sort, Ordered Set, Treap
-// Runtime: 70 ms (Beats 88.3%)
-// Memory: 89.4 MB (Beats 95.4%)
+// Runtime: 66 ms (Beats 91.0%)
+// Memory: 89.2 MB (Beats 97.1%)
 // Submitted: Nov 13, 2026
 // Link: https://leetcode.com/problems/count-of-smaller-numbers-after-self/
 // ═══════════════════════════════════════════════════════
@@ -50,12 +50,12 @@ public:
         FTree bit(sorted_nums.size());
         vector<int> result(n, 0);
 
-        for (int i = n - 1; i >= 0; i--) {
+        for (int i=n-1; i >= 0; i--) {
             int rank = lower_bound(sorted_nums.begin(), sorted_nums.end(), nums[i]) - sorted_nums.begin() + 1;
             result[i] = bit.query(rank - 1);
             bit.update(rank, 1);
         }
-
+           
         return result;
     }
 };
