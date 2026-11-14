@@ -2,9 +2,9 @@
 // Problem: 402. Remove K Digits
 // Difficulty: Medium
 // Topics: String, Stack, Greedy, Monotonic Stack
-// Runtime: 0 ms (Beats 100.0%)
-// Memory: 10.5 MB (Beats 99.7%)
-// Submitted: Oct 23, 2026
+// Runtime: 1 ms (Beats 86.1%)
+// Memory: 10.8 MB (Beats 97.4%)
+// Submitted: Nov 14, 2026
 // Link: https://leetcode.com/problems/remove-k-digits/
 // ═══════════════════════════════════════════════════════
 
@@ -33,41 +33,54 @@
 //         return result.empty()?"0":result;
 //     }
 // };
-
-#include <string>
-
+// class Solution {
+// public:
+//     std::string removeKdigits(std::string num, int k) {
+//         int n = num.length();
+//         if (n == k) return "0";
+        
+//         int top = -1; 
+        
+//         for (int i = 0; i < n; i++) {
+//             while (k > 0 && top >= 0 && num[top] > num[i]) {
+//                 top--;
+//                 k--;
+//             }
+//             top++;
+//             num[top] = num[i];
+//         }
+//         top -= k;
+//         int nonZeroStart = 0;
+//         while (nonZeroStart <= top && num[nonZeroStart] == '0') {
+//             nonZeroStart++;
+//         }
+//         if (nonZeroStart > top) return "0";
+//         return num.substr(nonZeroStart, top - nonZeroStart + 1);
+//     }
+// };
 class Solution {
 public:
-    std::string removeKdigits(std::string num, int k) {
-        int n = num.length();
-        if (n == k) return "0";
-        
-        int top = -1; // Acts as the top index of our in-place stack
-        
-        for (int i = 0; i < n; ++i) {
-            // In-place stack manipulation
-            while (k > 0 && top >= 0 && num[top] > num[i]) {
+    string removeKdigits(string num, int k) {
+        int n=num.size();
+        if(n==k) return "0";
+
+        int top=-1;
+
+        for(int i=0;i<n;i++){
+            while(k>0 && top>=0 && num[top]>num[i]){
                 top--;
                 k--;
             }
             top++;
-            num[top] = num[i];
+            num[top]=num[i];
         }
-        
-        // If k > 0, truncate the largest elements from the tail
-        top -= k;
-        
-        // Find the first non-zero character index
-        int nonZeroStart = 0;
-        while (nonZeroStart <= top && num[nonZeroStart] == '0') {
-            nonZeroStart++;
+        top=top-k;
+        int j=0;
+        while(j<=top && num[j]=='0'){
+            j++;
         }
-        
-        // If everything left is zeros or empty
-        if (nonZeroStart > top) return "0";
-        
-        // Return the final result slice
-        return num.substr(nonZeroStart, top - nonZeroStart + 1);
+        if(j>top) return"0";
+
+        return num.substr(j,top-j+1);
     }
 };
-
