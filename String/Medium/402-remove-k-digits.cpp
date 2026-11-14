@@ -3,7 +3,7 @@
 // Difficulty: Medium
 // Topics: String, Stack, Greedy, Monotonic Stack
 // Runtime: 1 ms (Beats 86.1%)
-// Memory: 10.8 MB (Beats 97.4%)
+// Memory: 10.7 MB (Beats 97.4%)
 // Submitted: Nov 14, 2026
 // Link: https://leetcode.com/problems/remove-k-digits/
 // ═══════════════════════════════════════════════════════
@@ -74,13 +74,15 @@ public:
             top++;
             num[top]=num[i];
         }
-        top=top-k;
-        int j=0;
-        while(j<=top && num[j]=='0'){
-            j++;
-        }
-        if(j>top) return"0";
 
-        return num.substr(j,top-j+1);
+        top=top-k;
+        int y=0;
+
+        while(y<top && num[y]=='0'){
+            y++;
+        }
+        if(y>top) return "0";
+
+        return num.substr(y,top-y+1);
     }
 };
