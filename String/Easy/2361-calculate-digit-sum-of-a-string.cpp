@@ -2,8 +2,8 @@
 // Problem: 2361. Calculate Digit Sum of a String
 // Difficulty: Easy
 // Topics: String, Simulation
-// Runtime: 1 ms (Beats 27.4%)
-// Memory: 9.6 MB (Beats 7.9%)
+// Runtime: 0 ms (Beats 100.0%)
+// Memory: 8.9 MB (Beats 86.3%)
 // Submitted: Nov 16, 2026
 // Link: https://leetcode.com/problems/calculate-digit-sum-of-a-string/
 // ═══════════════════════════════════════════════════════
@@ -18,7 +18,8 @@ public:
                 int c=0;
 
                 for(int j=i;j<i+k && j<s.length();j++){
-                    c+= stoi(s.substr(j,1));// c+=s[j]+48
+                    //c+= stoi(s.substr(j,1));
+                    c+=s[j]-48;
                 }
                 n+=to_string(c);
             }
