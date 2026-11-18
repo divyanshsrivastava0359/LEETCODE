@@ -2,12 +2,11 @@
 // Problem: 8. String to Integer (atoi)
 // Difficulty: Medium
 // Topics: String
-// Runtime: 0 ms (Beats 100.0%)
-// Memory: 9 MB (Beats 68.6%)
+// Runtime: N/A (Beats 0.0%)
+// Memory: N/A (Beats 0.0%)
 // Submitted: Nov 18, 2026
 // Link: https://leetcode.com/problems/string-to-integer-atoi/
 // ═══════════════════════════════════════════════════════
-
 
 class Solution {
 public:
@@ -26,14 +25,16 @@ public:
         }
           i++;
         }
-        int result=0;
+        long long  result=0;
         while(i<n && (s[i]>='0' && s[i]<='9')){
             int digit= s[i]-48;
-
-            if(result>INT_MAX/10 || (result==INT_MAX/10 && digit>7)){
-                return (sign==1)?INT_MAX:INT_MIN;
-            }
+            // if(result>INT_MAX/10 || (result==INT_MAX/10 && digit>7)){
+            //     return (sign==1)?INT_MAX:INT_MIN;
+            // }
             result=result*10+digit;
+
+            if(sign*result >= INT_MAX) return INT_MAX;
+            if(sign * result <=INT_MIN) return INT_MIN;
             i++;
         }
         return result*sign;
