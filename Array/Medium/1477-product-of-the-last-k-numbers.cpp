@@ -2,40 +2,38 @@
 // Problem: 1477. Product of the Last K Numbers
 // Difficulty: Medium
 // Topics: Array, Math, Design, Data Stream, Prefix Sum
-// Runtime: 92 ms (Beats 57.4%)
-// Memory: 98 MB (Beats 71.2%)
+// Runtime: 95 ms (Beats 51.4%)
+// Memory: 97.7 MB (Beats 96.1%)
 // Submitted: Nov 23, 2026
 // Link: https://leetcode.com/problems/product-of-the-last-k-numbers/
 // ═══════════════════════════════════════════════════════
 
 class ProductOfNumbers {
 private:
-vector<int>df;
+    vector<int>prefix;
 public:
     ProductOfNumbers() {
-        df={1};
+        prefix={1};
     }
     
     void add(int num) {
         if(num==0){
-            df={1};
+            prefix={1};
         }
         else{
-            df.push_back(df.back()*num);
+            prefix.push_back(prefix.back()*num);
         }
     }
     
     int getProduct(int k) {
-        int n=df.size();
+        int n=prefix.size();
         if(k>=n){
-          return 0;
+            return 0;
         }
-    
-        return df.back()/df[n-1-k];
+
+        return prefix.back()/prefix[n-1-k];
     }
 };
-
-
 
 /**
  * Your ProductOfNumbers object will be instantiated and called as such:
