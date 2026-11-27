@@ -3,8 +3,8 @@
 // Difficulty: Medium
 // Topics: Array, Binary Search
 // Runtime: 0 ms (Beats 100.0%)
-// Memory: 17.6 MB (Beats 15.6%)
-// Submitted: Nov 20, 2026
+// Memory: 17.5 MB (Beats 75.7%)
+// Submitted: Nov 27, 2026
 // Link: https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
 // ═══════════════════════════════════════════════════════
 
@@ -15,7 +15,7 @@ public:
         int last=firstbound(nums,target,false);
         return {first,last};
     }
-    int firstbound(vector<int>& nums,int target,bool isfirst){
+    int firstbound(vector<int>& nums,int target,bool flag){
         int bound=-1;
         int left=0;
         int right=nums.size()-1;
@@ -24,7 +24,7 @@ public:
             int mid=left+(right-left)/2;
             if(nums[mid]==target){
                 bound=mid;
-                if(isfirst){
+                if(flag){
                     right=mid-1;
                 }
                 else{
